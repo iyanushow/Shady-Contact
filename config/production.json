@@ -1,0 +1,4 @@
+{
+  "dbURL": "mongodb+srv://iyanushow:iyanu2205@shady-contact.q8q9d.mongodb.net/contactDB?retryWrites=true&w=majority",
+  "jwtsecret": "shadydevtoken"
+}
