@@ -598,6 +598,7 @@ button.ghost {
 
   .lead {
     font-size: 1rem;
+
   }
 
   /* Navbar */
@@ -620,9 +621,9 @@ button.ghost {
     display: none;
   }
   .sign-in-container, .container-a.active .sign-up-container {
-    transform: translateX(0);
     width: 100%;
     z-index: 120;
+    transform: translateX(0);
   }
   .mobile-register{
     display: block;
