@@ -47,6 +47,11 @@ export default (state, action) => {
         ...state,
         error:null
       }
+    case 'CHANGE_SLIDER':
+      return {
+        ...state,
+        slider:action.payload
+      }
      default:
       return state
   }

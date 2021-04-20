@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+
 /* Global Styles */
 :root {
   --primary-color: #003699;
@@ -419,6 +420,7 @@ table th {
   justify-content: center;
   height: 100vh;
   margin: -20px 0 50px;
+  transform: translateY(-10%);
   
 }
 
@@ -431,6 +433,7 @@ table th {
   max-width: 100%;
   min-height: 480px;
   overflow: hidden;
+  font-size: clamp(0.75rem, 0.5682rem + 0.9091vw, 1rem);
 }
 .form-container-a {
   position: absolute;
@@ -489,6 +492,7 @@ button.ghost {
   width: 50%;
   z-index: 2;
 }
+
 .sign-up-container {
   left: 0;
   width: 50%;
@@ -544,6 +548,9 @@ button.ghost {
   transform: translateX(100%);
   opacity: 0;
 }
+
+
+
 .container-a.active .overlay-container {
   transform: translateX(-100%);
 }
@@ -552,6 +559,7 @@ button.ghost {
   opacity: 1;
   z-index: 5;
 }
+
 
 .container-a.active .overlay {
   transform: translateX(50%);
@@ -563,6 +571,9 @@ button.ghost {
   transform: translateX(20%);
 }
 
+.mobile-register{
+  display: none;
+}
 
 /* Mobile Styles */
 @media (max-width: 700px) {
@@ -603,5 +614,22 @@ button.ghost {
     text-align: center;
     justify-content: center;
   }
+
+ 
+  .overlay{
+    display: none;
+  }
+  .sign-in-container, .container-a.active .sign-up-container {
+    transform: translateX(0);
+    width: 100%;
+    z-index: 120;
+  }
+  .mobile-register{
+    display: block;
+  }
+  .mobile-register a{
+    cursor: pointer;
+  }
+
 }
 

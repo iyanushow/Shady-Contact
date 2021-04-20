@@ -21,6 +21,7 @@ const AuthState = (props) => {
     loading: true,
     user:null,
     error: null,
+    slider: false
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
@@ -88,6 +89,10 @@ const AuthState = (props) => {
   dispatch({ type: CLEAR_ERRORS});
 
   };
+  const toggleSlider = (slider) => {
+  dispatch({ type: 'CHANGE_SLIDER', payload:!slider});
+
+  };
   return (
     <AuthContext.Provider
       value={{
@@ -96,16 +101,18 @@ const AuthState = (props) => {
         loading: state.loading,
         user: state.user,
         error: state.error,
+        slider: state.slider,
         register,
         loadUser,
         login,
         logout,
-        clearErrors
+        clearErrors,
+        toggleSlider,
       }}
     >
       {props.children}
-     </AuthContext.Provider>
-  )
+    </AuthContext.Provider>
+  );
 }
 
 export default AuthState

@@ -1,6 +1,7 @@
-import React, { useState, useContext,useEffect } from 'react';
+import React, { useState, useContext,useEffect, useRef } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
+import ChangeForm from './ChangeForm';
 
 
 
@@ -45,11 +46,14 @@ const Login = (props) => {
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   }
+ 
+
+  const ref = useRef(null)
   return (
-    <div className='form-container-a sign-in-container'>
+    <div className='form-container-a sign-in-container' ref={ref}>
       <form onSubmit={onSubmit}>
         <h1>Sign in</h1>
-        
+
         <span>or use your account</span>
         <input
           type='email'
@@ -71,6 +75,7 @@ const Login = (props) => {
         />
         {/* <a href=''>Forgot your password?</a> */}
         <button>Sign In</button>
+      <ChangeForm />
       </form>
     </div>
   );
