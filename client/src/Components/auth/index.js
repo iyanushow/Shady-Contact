@@ -1,20 +1,21 @@
 import React, {useState, useContext} from 'react'
 import Login from './Login';
 import Register from './Register';
+import AuthContext from '../../context/auth/authContext';
 
 const Registration = (props) => {
-  const [slider, setSlider] = useState(false);
+  const { slider, toggleSlider } = useContext(AuthContext);
 
   const onClick = (e) => {
-    setSlider(!slider)
+    toggleSlider(slider)
   }
   const activeSlider = slider ? 'active' : ''
-
+  
   return (
     <div className='form-body'>
       <div className={`container-a ${activeSlider}`} id='container'>
         <Register {...props} />
-        <Login {...props} />
+        <Login {...props} slider={slider}/>
         <div className='overlay-container'>
           <div className='overlay'>
             <div className='overlay-panel overlay-left'>

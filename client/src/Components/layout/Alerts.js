@@ -3,7 +3,7 @@ import AlertContext from '../../context/alert/alertContext'
 const Alerts = () => {
   const alertContext = useContext(AlertContext)
 
-  const {alerts, setAlert} = alertContext
+  const {alerts} = alertContext
   
   return (
     alerts.length > 0 && alerts.map(alert => (
